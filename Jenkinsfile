@@ -71,7 +71,7 @@ pipeline {
         success {
             slackSend channel: '#sydneyip1',
                         color: 'good',
-                        message: "The pipeline ${currentBuild.fullDisplayName} completed successfully. Visit https://gallery-app-1ho8.onrender.com "
+                        message: "The pipeline ${currentBuild.fullDisplayName} completed successfully. Visit "https://gallery-rkb6.onrender.com/"
         }
     }     
 }
