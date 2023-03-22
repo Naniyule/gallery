@@ -61,13 +61,19 @@ pipeline {
         }
     }
 
-      post {
-    success {
-      slackSend color: "good", message: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} Succeeded. Deployed at ${LIVE_SITE}"
-    }
-    failure {
-      slackSend color: "danger", message: "Build ${env.BUILD_NUMBER} of ${env.JOB_NAME} failed. See ${env.BUILD_URL} for details."
-    }
-  }
+    post{
+        failure {
+            emailext attachLog: true, 
+                body: EMAIL_BODY, 
+                subject: EMAIL_SUBJECT_FAILURE, 
+                to: EMAIL_RECEPIENT
+        }
+        success {
+            slackSend channel: '#sydneyip1',
+                        color: 'good',
+                        message: "The pipeline ${currentBuild.fullDisplayName} completed successfully. Visit https://gallery-app-1ho8.onrender.com "
+        }
+    }     
+}
 
 }
