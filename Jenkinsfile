@@ -12,7 +12,7 @@ pipeline {
         """
         EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
-        EMAIL_RECEPIENT = 'dorothy1cherotich@gmail.com'
+        EMAIL_RECEPIENT = 'naniyule@gmail.com'
     }
     tools {
         nodejs '19.8.0'
