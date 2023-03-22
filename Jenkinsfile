@@ -15,17 +15,22 @@ pipeline {
         EMAIL_SUBJECT_SUCCESS = "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'"
         EMAIL_RECEPIENT = 'naniyule@gmail.com'
-        LIVE_SITE = 'https://galllery.onrender.com
 
 
     tools {
         nodejs 'Node-19.8.0'
     }
-
+    
+        
     stages {
+        stage('Start') {
+            steps {
+                echo 'Build is starting'
+            }
+        }
         stage ('Clone repository') {
             steps {
-                git url: 'https://github.com/Naniyule/jenkins-pipeline.git', branch: 'main'
+                git url: 'https://github.com/Naniyule/gallery.git', branch: 'main'
             }
         }
 
@@ -40,17 +45,16 @@ pipeline {
                  sh 'npm test'
              }
          }
-
-         stage('Deploy to Render') {
-           steps {
-               withCredentials([usernameColonPassword(credentialsId: 'Render', variable: 'RENDER_CREDENTIALS' )]){
-                     sh 'git push https://${RENDER_CREDENTIALS}@git.Render.com/secret-shore-37984.git master'
-               }
-           }
+        
+         stage('Build'){
+            steps{
+                echo('Build successful')
+            }
+        }
          }
     }
 
-            stage('End') {
+          stage('End') {
             steps {
                 echo 'Deployment completed'
             }
