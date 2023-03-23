@@ -34,15 +34,15 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Build'){
-            steps{
-                echo('Build successful')
-            }
-        }
+        // stage('Build'){
+        //     steps{
+        //         echo('Build successful')
+        //     }
+        // }
 
         stage('Test'){
             steps {
-                sh 'npm run test'
+                sh 'npm test'
             }
         }
        
