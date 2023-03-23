@@ -60,12 +60,12 @@ pipeline {
         }
     }
     post{
-        failure {
-            emailext attachLog: true, 
-                body: EMAIL_BODY, 
-                subject: EMAIL_SUBJECT_FAILURE, 
-                to: EMAIL_RECEPIENT
-        }
+        // failure {
+        //     emailext attachLog: true, 
+        //         body: EMAIL_BODY, 
+        //         subject: EMAIL_SUBJECT_FAILURE, 
+        //         to: EMAIL_RECEPIENT
+        // }
         success {
             slackSend channel: '#sydneyip1',
                         color: 'good',
