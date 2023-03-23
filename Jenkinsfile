@@ -42,7 +42,7 @@ pipeline {
        
         stage('deploy'){
             steps {
-                bat 'curl -X POST '
+                bat 'curl -X POST https://api.render.com/deploy/srv-cgcnate4dad6fr5pob00?key=P8i_3dp_kWA'
            
             }
         }
