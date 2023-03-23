@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
-                bat 'npm install'
+                SH 'npm install'
             }
         }
         stage('Build'){
@@ -42,13 +42,13 @@ pipeline {
 
         stage('Test'){
             steps {
-                bat 'npm run test'
+                sh 'npm run test'
             }
         }
        
-        stage('deploy'){
+        stage('deploy to Render'){
             steps {
-                bat 'curl -X POST https://api.render.com/deploy/srv-cgcnate4dad6fr5pob00?key=P8i_3dp_kWA'
+                sh 'curl -X POST https://api.render.com/deploy/srv-cgcnate4dad6fr5pob00?key=P8i_3dp_kWA'
            
             }
         }
