@@ -39,6 +39,12 @@ pipeline {
                 echo('Build successful')
             }
         }
+
+        stage('Test'){
+            steps {
+                bat 'npm run test'
+            }
+        }
        
         stage('deploy'){
             steps {
