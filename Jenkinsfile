@@ -14,9 +14,9 @@ pipeline {
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
         EMAIL_RECEPIENT = 'naniyule@gmail.com'
     }
-    tools {
-        nodejs 19.8.1
-    }
+    // tools {
+    //     nodejs 19.8.1
+    // }
     stages {
         stage('Start') {
             steps {
