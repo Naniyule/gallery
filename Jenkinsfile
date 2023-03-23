@@ -15,7 +15,7 @@ pipeline {
         EMAIL_RECEPIENT = 'naniyule@gmail.com'
     }
     tools {
-        nodejs '19.8.0'
+        nodejs 19.8.0
     }
     stages {
         stage('Start') {
