@@ -71,6 +71,11 @@ pipeline {
                         color: 'good',
                         message: "The pipeline ${currentBuild.fullDisplayName} completed successfully. Visit https://gallery-rkb6.onrender.com/ "
         }
+        failure {
+            slackSend channel: '#sydneyip1',
+                        color: 'danger',
+                        message: "The pipeline ${currentBuild.fullDisplayName} failed "
+        }
     }     
 }
 
