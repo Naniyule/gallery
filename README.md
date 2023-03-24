@@ -21,6 +21,8 @@ This is a web application that displays photos in a gallery format.
 - JAVASCRIPT
 - JENKINS
 - SLACK
+- NODE
+- RENDER
 
 ### Installing
 
@@ -29,7 +31,7 @@ This is a web application that displays photos in a gallery format.
 
 ### Executing program
 
-- Run it locally from the index.html file.
+- Run it locally using node.
 - You can also access it from the RENDER page -- https://gallery-rkb6.onrender.com/
 
 ## Authors
